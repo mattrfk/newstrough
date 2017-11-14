@@ -9,7 +9,7 @@ import time
 OUT_DIR = "../www/news/"
 SRC_DIR = "src/"
 INDEX = "index.html"
-CWD = os.path.dirname(__file__)
+CWD = os.path.realpath('.') 
 SRCINDEX = os.path.join(CWD,SRC_DIR, "index.html")
 FSTUB = os.path.join(CWD,SRC_DIR, "feedstub.html")
 ISTUB = os.path.join(CWD,SRC_DIR, "itemstub.html")
