@@ -63,4 +63,4 @@ sh("mkdir -p {}".format(OUT_DIR))
 sh("cp {}*.css {}".format(SRC_DIR, OUT_DIR))
 sh("cp {} {}".format(SRCINDEX, OUT_DIR))
 
-open(os.path.join(OUT_DIR, INDEX), 'w').write(index)
+open(os.path.join(OUT_DIR, INDEX), 'w').write(index.encode('ascii', 'xmlcharrefreplace').decode('utf-8'))

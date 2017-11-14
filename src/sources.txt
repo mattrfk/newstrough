@@ -4,8 +4,8 @@ CNN,http://rss.cnn.com/rss/cnn_world.rss
 DW,http://rss.dw.com/rdf/rss-en-all
 NPR,https://www.npr.org/rss/rss.php
 Reuters,http://feeds.reuters.com/reuters/topNews
-#Defense News,http://feeds.feedburner.com/defense-news/home
-Long War Journal,https://www.longwarjournal.org/rss-feeds.php
+Defense News,http://feeds.feedburner.com/defense-news/home
+#Long War Journal,https://www.longwarjournal.org/rss-feeds.php
 /r/worldnews,https://reddit.com/r/worldnews.rss
 Fox "News",http://feeds.foxnews.com/foxnews/latest
 Seattle Times,https://www.seattletimes.com/feed/
