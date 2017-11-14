@@ -1,0 +1,11 @@
+AP,http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
+NYT,http://rss.nytimes.com/services/xml/rss/nyt/World.xml
+CNN,http://rss.cnn.com/rss/cnn_world.rss
+DW,http://rss.dw.com/rdf/rss-en-all
+NPR,https://www.npr.org/rss/rss.php
+Reuters,http://feeds.reuters.com/reuters/topNews
+#Defense News,http://feeds.feedburner.com/defense-news/home
+Long War Journal,https://www.longwarjournal.org/rss-feeds.php
+/r/worldnews,https://reddit.com/r/worldnews.rss
+Fox "News",http://feeds.foxnews.com/foxnews/latest
+Seattle Times,https://www.seattletimes.com/feed/
