@@ -1,11 +1,13 @@
+# non-standard
 import feedparser
+from pytz import timezone
+
 import os
+import cgi
+import random
+from datetime import datetime
 from subprocess import call
 from string import Template
-import cgi
-import time
-import random
-
 
 OUT_DIR = "../www/news/"
 SRC_DIR = "src/"
@@ -47,6 +49,7 @@ with open(os.path.join(SRC_DIR, FEEDLIST)) as fl:
             FEEDS.append(x.strip() for x in line.split(','))
 
 sources = []
+published = []
 for t,f in FEEDS:
     print("retrieving", t, " - ", f)
     d = feedparser.parse(f)
@@ -60,11 +63,17 @@ for t,f in FEEDS:
         item = itemstub.substitute(link=e.link, headline=cgi.escape(e.title, quote=True))
         items.append(item)
 
+        try:
+            pubdate = e.published
+        except:
+            pubdate = "no published date supplied"
+        published.append((t + " => " + e.title, pubdate))
+
     source = feedstub.substitute(title=t, items=''.join(items))
     sources.append(source)
     print("done")
 
-t = "As of: {}".format(time.strftime('%l:%M%p %Z on %b %d, %Y'))
+t = "As of: {}".format(datetime.now(timezone('US/Pacific')).strftime('%l:%M%p %Z on %b %d, %Y'))
 index = indexstub.substitute(timestamp=t, quote=quote, attribution="-"+attr, feedstubs=''.join(sources))
 
 # cleanup
