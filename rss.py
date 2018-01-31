@@ -27,19 +27,6 @@ itemstub = makeStub(ISTUB)
 def sh(cmd):
     call(cmd, shell=True)
 
-
-QUOTELIST = "quotes.txt"
-QUOTES = []
-try:
-    with open(os.path.join(SRC_DIR, QUOTELIST)) as ql:
-        for line in ql:
-            if not line.startswith('#'):
-                QUOTES.append(x.strip() for x in line.rsplit('―', 1))
-
-    quote,attr = QUOTES[random.randint(0,len(QUOTES)-1)]
-except:
-    quote,attr =( "Who controls the past controls the future. Who controls the present controls the past.", "George Orwell")
-
 FEEDLIST = "sources.txt"
 FEEDS = []
 FEEDLIMIT = 15
@@ -74,7 +61,7 @@ for t,f in FEEDS:
     print("done")
 
 t = "As of: {}".format(datetime.now(timezone('US/Pacific')).strftime('%l:%M%p %Z on %b %d, %Y'))
-index = indexstub.substitute(timestamp=t, quote=quote, attribution="-"+attr, feedstubs=''.join(sources))
+index = indexstub.substitute(timestamp=t, feedstubs=''.join(sources))
 
 # cleanup
 if(os.path.exists(OUT_DIR)):

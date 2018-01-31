@@ -1,23 +1,28 @@
-AP,http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
-NYT,http://rss.nytimes.com/services/xml/rss/nyt/World.xml
-BBC,http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml?edition=int
-CBC,http://www.cbc.ca/cmlink/rss-topstories
+AP - Associated Press,http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
+NYT - New York Times,http://rss.nytimes.com/services/xml/rss/nyt/World.xml
+CNN - Cable News Network,http://rss.cnn.com/rss/cnn_world.rss
+BBC - British Broadcasting Corporation,http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml?edition=int
+CBC - Canadian Broadcasting Corporation,http://www.cbc.ca/cmlink/rss-topstories
+DW - Deutsche Welle,http://rss.dw.com/rdf/rss-en-all
+ABC - Australian Broacasting Corporation,http://www.abc.net.au/news/feed/45910/rss.xml
 Reuters,http://feeds.reuters.com/reuters/topNews
-CNN,http://rss.cnn.com/rss/cnn_world.rss
-NPR,https://www.npr.org/rss/rss.php
+Aljazeera,http://www.aljazeera.com/xml/rss/all.xml
+NPR - National Public Radio,https://www.npr.org/rss/rss.php
 Washington Post,http://feeds.washingtonpost.com/rss/national
-DW,http://rss.dw.com/rdf/rss-en-all
-PBS,https://www.pbs.org/newshour/feeds/rss/world
+Wall Street Journal,http://www.wsj.com/xml/rss/3_7085.xml
+PBS - Public Broadcasting Service,https://www.pbs.org/newshour/feeds/rss/world
 Defense News,http://feeds.feedburner.com/defense-news/home
 #Long War Journal,https://www.longwarjournal.org/rss-feeds.php
 Japan Times,https://www.japantimes.co.jp/feed/topstories/
-Aljazeera,http://www.aljazeera.com/xml/rss/all.xml
-Xinhua World,http://www.xinhuanet.com/english/rss/worldrss.xml
-Xinhua China,http://www.xinhuanet.com/english/rss/chinarss.xml
-Fox,http://feeds.foxnews.com/foxnews/latest
-RT,https://www.rt.com/rss/news/
+Nikkei Asian Review,https://asia.nikkei.com/rss/feed/nar
+The Chosun Ilbo (S. Korea),http://english.chosun.com/site/data/rss/rss.xml
+#Jagran Prakashan (India),http://english.jagran.com/englishresources/rss/nation.xml
+#Xinhua World,http://www.xinhuanet.com/english/rss/worldrss.xml
+#Xinhua China,http://www.xinhuanet.com/english/rss/chinarss.xml
+Fox "news",http://feeds.foxnews.com/foxnews/latest
 Brietbart,http://feeds.feedburner.com/breitbart
+RT - Russia Today,https://www.rt.com/rss/news/
 Seattle Times,https://www.seattletimes.com/feed/
 New Yorker,https://www.newyorker.com/feed/news
-/r/worldnews,https://reddit.com/r/worldnews.rss
+/r/worldnews (reddit),https://reddit.com/r/worldnews.rss
 Hacker News,https://hnrss.org/frontpage
