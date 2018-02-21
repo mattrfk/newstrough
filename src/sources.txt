@@ -1,16 +1,17 @@
-AP - Associated Press,http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
-NYT - New York Times,http://rss.nytimes.com/services/xml/rss/nyt/World.xml
-CNN - Cable News Network,http://rss.cnn.com/rss/cnn_world.rss
-BBC - British Broadcasting Corporation,http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml?edition=int
-CBC - Canadian Broadcasting Corporation,http://www.cbc.ca/cmlink/rss-topstories
-DW - Deutsche Welle,http://rss.dw.com/rdf/rss-en-all
-ABC - Australian Broacasting Corporation,http://www.abc.net.au/news/feed/45910/rss.xml
-Reuters,http://feeds.reuters.com/reuters/topNews
+Associated Press (Top),http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
+New York Times,http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+Reuters (World),http://feeds.reuters.com/Reuters/worldNews
+Reuters (Top),http://feeds.reuters.com/reuters/topNews
+Cable News Network (World),http://rss.cnn.com/rss/cnn_world.rss
+British Broadcasting Corporation (Top),http://feeds.bbci.co.uk/news/rss.xml
+Canadian Broadcasting Corporation (Top),http://www.cbc.ca/cmlink/rss-topstories
+Deutsche Welle,http://rss.dw.com/rdf/rss-en-all
+#Australian Broacasting Corporation,http://www.abc.net.au/news/feed/45910/rss.xml
 Aljazeera,http://www.aljazeera.com/xml/rss/all.xml
-NPR - National Public Radio,https://www.npr.org/rss/rss.php
+National Public Radio,https://www.npr.org/rss/rss.php
 Washington Post,http://feeds.washingtonpost.com/rss/national
 Wall Street Journal,http://www.wsj.com/xml/rss/3_7085.xml
-PBS - Public Broadcasting Service,https://www.pbs.org/newshour/feeds/rss/world
+Public Broadcasting Service,https://www.pbs.org/newshour/feeds/rss/world
 Defense News,http://feeds.feedburner.com/defense-news/home
 #Long War Journal,https://www.longwarjournal.org/rss-feeds.php
 Japan Times,https://www.japantimes.co.jp/feed/topstories/
