@@ -33,7 +33,7 @@ FEEDLIMIT = 15
 with open(os.path.join(SRC_DIR, FEEDLIST)) as fl:
     for line in fl:
         if not line.startswith('#'):
-            FEEDS.append(x.strip() for x in line.split(','))
+            FEEDS.append(x.strip() for x in line.rsplit(',', 1))
 
 sources = []
 published = []

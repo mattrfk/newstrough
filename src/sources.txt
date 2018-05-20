@@ -1,29 +1,23 @@
-Associated Press (Top),http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
-New York Times,http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
-Reuters (World),http://feeds.reuters.com/Reuters/worldNews
-Reuters (Top),http://feeds.reuters.com/reuters/topNews
-Cable News Network (World),http://rss.cnn.com/rss/cnn_world.rss
-British Broadcasting Corporation (Top),http://feeds.bbci.co.uk/news/rss.xml
-Canadian Broadcasting Corporation (Top),http://www.cbc.ca/cmlink/rss-topstories
-Deutsche Welle,http://rss.dw.com/rdf/rss-en-all
-#Australian Broacasting Corporation,http://www.abc.net.au/news/feed/45910/rss.xml
-Aljazeera,http://www.aljazeera.com/xml/rss/all.xml
-National Public Radio,https://www.npr.org/rss/rss.php
-Washington Post,http://feeds.washingtonpost.com/rss/national
-Wall Street Journal,http://www.wsj.com/xml/rss/3_7085.xml
-Public Broadcasting Service,https://www.pbs.org/newshour/feeds/rss/world
-Defense News,http://feeds.feedburner.com/defense-news/home
-#Long War Journal,https://www.longwarjournal.org/rss-feeds.php
-Japan Times,https://www.japantimes.co.jp/feed/topstories/
-Nikkei Asian Review,https://asia.nikkei.com/rss/feed/nar
-The Chosun Ilbo (S. Korea),http://english.chosun.com/site/data/rss/rss.xml
-#Jagran Prakashan (India),http://english.jagran.com/englishresources/rss/nation.xml
-#Xinhua World,http://www.xinhuanet.com/english/rss/worldrss.xml
-#Xinhua China,http://www.xinhuanet.com/english/rss/chinarss.xml
-Fox "news",http://feeds.foxnews.com/foxnews/latest
-Brietbart,http://feeds.feedburner.com/breitbart
-RT - Russia Today,https://www.rt.com/rss/news/
-Seattle Times,https://www.seattletimes.com/feed/
-New Yorker,https://www.newyorker.com/feed/news
-/r/worldnews (reddit),https://reddit.com/r/worldnews.rss
-Hacker News,https://hnrss.org/frontpage
+Reuters World (UK/Canada, The Woodbridge Company Limited),http://feeds.reuters.com/Reuters/worldNews
+AP - Associated Press (US, Non-profit),http://hosted2.ap.org/atom/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305
+FDD's Long War Journal (US, 'think tank'),https://feeds.feedburner.com/LongWarJournalSiteWide
+NYT - New York Times (US, Arthur Gregg Sulzberger),http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+CNN - Cable News Network World (US, Time Warner),http://rss.cnn.com/rss/cnn_world.rss
+BBC - British Broadcasting Corporation (UK, state),http://feeds.bbci.co.uk/news/rss.xml
+DW - Deutsche Welle (German, public),http://rss.dw.com/rdf/rss-en-all
+The Intercept (US, First Look Media),https://theintercept.com/feed/?rss
+Aljazeera (Qatar, state-owned),http://www.aljazeera.com/xml/rss/all.xml
+National Public Radio (US, public),https://www.npr.org/rss/rss.php
+WP - Washington Post (US, Jeff Bezos),http://feeds.washingtonpost.com/rss/national
+WSJ - Wall Street Journal (US, News Corp),http://www.wsj.com/xml/rss/3_7085.xml
+PBS - Public Broadcasting Service (US, public),https://www.pbs.org/newshour/feeds/rss/world
+Defense News (US, Sightline Media Group),http://feeds.feedburner.com/defense-news/home
+Japan Times (Japan obviously, Yukiko Ogasawara),https://www.japantimes.co.jp/feed/topstories/
+Nikkei Asian Review (Japan, Nikkei Inc.),https://asia.nikkei.com/rss/feed/nar
+The Chosun Ilbo (S. Korea, Chosun Ilbo Co),http://english.chosun.com/site/data/rss/rss.xml
+Fox News (US, 21st Century Fox),http://feeds.foxnews.com/foxnews/latest
+RT - Russia Today (Russia, state),https://www.rt.com/rss/news/
+Seattle Times (US, The Seattle Times Company),https://www.seattletimes.com/feed/
+New Yorker (US, Condé Nast - Advance Publications),https://www.newyorker.com/feed/news
+/r/worldnews (reddit, US, Advance Publications),https://reddit.com/r/worldnews.rss
+Hacker News (US Tech, Y Combinator),https://hnrss.org/frontpage
