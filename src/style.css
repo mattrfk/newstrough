@@ -1,0 +1,42 @@
+body {
+  background-color: #262626;
+  color: #D0D0D0;
+}
+
+details {
+  font-family: monospace;
+  font-size: large;
+  color: #ffbf79;
+}
+
+a {
+  font-family: serif;
+}
+
+a:link {
+  color: #c7c7c7;
+  text-decoration: none;
+}
+a:link:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #856f8c;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+#timestamp {
+  color: #34ad50;
+}
+
+#desc {
+  margin-left: 0.75em;
+  color: #8e8e8e;
+  font-size: medium;
+}

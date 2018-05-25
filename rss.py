@@ -3,6 +3,7 @@ import feedparser
 from pytz import timezone
 
 import os
+import csv
 import cgi
 import random
 from datetime import datetime
@@ -12,7 +13,7 @@ from string import Template
 OUT_DIR = "../www/news/"
 SRC_DIR = "src/"
 INDEX = "index.html"
-CWD = os.path.realpath('.') 
+CWD = os.path.realpath('.')
 SRCINDEX = os.path.join(CWD,SRC_DIR, "index.html")
 FSTUB = os.path.join(CWD,SRC_DIR, "feedstub.html")
 ISTUB = os.path.join(CWD,SRC_DIR, "itemstub.html")
@@ -27,19 +28,24 @@ itemstub = makeStub(ISTUB)
 def sh(cmd):
     call(cmd, shell=True)
 
-FEEDLIST = "sources.txt"
+FEEDLIST = "sources.csv"
 FEEDS = []
 FEEDLIMIT = 15
 with open(os.path.join(SRC_DIR, FEEDLIST)) as fl:
+    sources = csv.reader(fl, delimiter=',', quotechar='"')
+    for row in sources:
+        FEEDS.append(row)
+
+
     for line in fl:
         if not line.startswith('#'):
             FEEDS.append(x.strip() for x in line.rsplit(',', 1))
 
 sources = []
 published = []
-for t,f in FEEDS:
-    print("retrieving", t, " - ", f)
-    d = feedparser.parse(f)
+for title,desc,url in FEEDS:
+    print("retrieving", title, " - ", url)
+    d = feedparser.parse(url)
 
     items = []
     i = 0
@@ -54,9 +60,9 @@ for t,f in FEEDS:
             pubdate = e.published
         except:
             pubdate = "no published date supplied"
-        published.append((t + " => " + e.title, pubdate))
+        published.append((title + " => " + e.title, pubdate))
 
-    source = feedstub.substitute(title=t, items=''.join(items))
+    source = feedstub.substitute(title=title, desc='['+desc+']', items=''.join(items))
     sources.append(source)
     print("done")
 
