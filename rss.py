@@ -5,7 +5,7 @@ from pytz import timezone
 import os
 import csv
 import cgi
-import random
+import io
 from datetime import datetime
 from subprocess import call
 from string import Template
@@ -20,51 +20,67 @@ ISTUB = os.path.join(CWD,SRC_DIR, "itemstub.html")
 FEEDLIST = "sources.csv"
 FEEDS = []
 FEEDLIMIT = 15
+UTF8 = 'utf-8'
 
-def makeStub(path):
+
+def make_stub(path):
     return Template(open(path).read())
 
-indexstub = makeStub(SRCINDEX)
-feedstub = makeStub(FSTUB)
-itemstub = makeStub(ISTUB)
 
 def sh(cmd):
     call(cmd, shell=True)
 
+def gather_items(d):
+    items = []
+    for i, e in enumerate(d.entries):
+        if i > FEEDLIMIT: break
 
-import io
+        link = e.link
+        headline = cgi.escape(e.title, quote=True)
+        item = itemstub.substitute(
+            link=link, headline=headline)
+        items.append(item)
 
-with io.open(os.path.join(SRC_DIR, FEEDLIST), 'r', encoding='utf-8') as fl:
-    sources = csv.reader(fl, delimiter=',', quotechar='"')
+        try:
+            pubdate = e.published
+        except:
+            pubdate = "no  date supplied"
+
+        published.append((title + " => " + e.title, pubdate))
+    return items
+
+
+indexstub = make_stub(SRCINDEX)
+feedstub = make_stub(FSTUB)
+itemstub = make_stub(ISTUB)
+
+feedpath = os.path.join(SRC_DIR, FEEDLIST)
+
+with io.open(feedpath, 'r', encoding=UTF8) as fl:
+    sources = csv.reader(
+        fl, delimiter=',', quotechar='"')
     for row in sources:
         FEEDS.append(row)
 
 sources = []
 published = []
 for title,desc,url in FEEDS:
-    print("retrieving", title.encode('utf-8'), " - ", url)
+    print("retrieving", title.encode(UTF8), " - ", url)
     d = feedparser.parse(url)
 
-    items = []
-    i = 0
-    for e in d.entries:
-        if i > FEEDLIMIT:
-            break
-        i += 1
-        item = itemstub.substitute(link=e.link, headline=cgi.escape(e.title, quote=True))
-        items.append(item)
+    items = gather_items(d)
 
-        try:
-            pubdate = e.published
-        except:
-            pubdate = "no published date supplied"
-        published.append((title + " => " + e.title, pubdate))
+    source = feedstub.substitute(
+            title=title, desc='['+desc+']', items=''.join(items))
 
-    source = feedstub.substitute(title=title, desc='['+desc+']', items=''.join(items))
     sources.append(source)
     print("done")
 
-t = "As of: {}".format(datetime.now(timezone('US/Pacific')).strftime('%l:%M%p %Z on %b %d, %Y'))
+
+time = datetime.now(timezone('US/Pacific'))
+format = '%l:%M%p %Z on %b %d, %Y'
+t = "As of: {}".format(time.strftime(format))
+
 index = indexstub.substitute(timestamp=t, feedstubs=''.join(sources))
 
 # cleanup
@@ -76,4 +92,5 @@ sh("mkdir -p {}".format(OUT_DIR))
 sh("cp {}*.css {}".format(SRC_DIR, OUT_DIR))
 sh("cp {} {}".format(SRCINDEX, OUT_DIR))
 
-open(os.path.join(OUT_DIR, INDEX), 'w').write(index.encode('ascii', 'xmlcharrefreplace').decode('utf-8'))
+out = open(os.path.join(OUT_DIR, INDEX), 'w')
+out.write(index.encode('ascii', 'xmlcharrefreplace').decode(UTF8))
