@@ -17,6 +17,9 @@ CWD = os.path.realpath('.')
 SRCINDEX = os.path.join(CWD,SRC_DIR, "index.html")
 FSTUB = os.path.join(CWD,SRC_DIR, "feedstub.html")
 ISTUB = os.path.join(CWD,SRC_DIR, "itemstub.html")
+FEEDLIST = "sources.csv"
+FEEDS = []
+FEEDLIMIT = 15
 
 def makeStub(path):
     return Template(open(path).read())
@@ -28,23 +31,18 @@ itemstub = makeStub(ISTUB)
 def sh(cmd):
     call(cmd, shell=True)
 
-FEEDLIST = "sources.csv"
-FEEDS = []
-FEEDLIMIT = 15
-with open(os.path.join(SRC_DIR, FEEDLIST)) as fl:
+
+import io
+
+with io.open(os.path.join(SRC_DIR, FEEDLIST), 'r', encoding='utf-8') as fl:
     sources = csv.reader(fl, delimiter=',', quotechar='"')
     for row in sources:
         FEEDS.append(row)
 
-
-    for line in fl:
-        if not line.startswith('#'):
-            FEEDS.append(x.strip() for x in line.rsplit(',', 1))
-
 sources = []
 published = []
 for title,desc,url in FEEDS:
-    print("retrieving", title, " - ", url)
+    print("retrieving", title.encode('utf-8'), " - ", url)
     d = feedparser.parse(url)
 
     items = []
