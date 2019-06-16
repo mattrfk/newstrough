@@ -90,6 +90,7 @@ if(os.path.exists(OUT_DIR)):
 
 sh("mkdir -p {}".format(OUT_DIR))
 sh("cp {}*.css {}".format(SRC_DIR, OUT_DIR))
+sh("cp {}*.js {}".format(SRC_DIR, OUT_DIR))
 sh("cp {} {}".format(SRCINDEX, OUT_DIR))
 
 out = open(os.path.join(OUT_DIR, INDEX), 'w')
