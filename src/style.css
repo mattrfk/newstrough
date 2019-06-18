@@ -15,7 +15,6 @@ a {
 
 a:link {
   color: #c7c7c7;
-  text-decoration: none;
 }
 a:link:hover {
   text-decoration: underline;
@@ -29,6 +28,12 @@ li {
   list-style-type: none;
   margin-top: 16px;
   margin-bottom: 8px;
+}
+
+.summary {
+  color: #c7c7c7;
+  margin-left: 2em;
+  margin-top: 0.2em;
 }
 
 #timestamp {

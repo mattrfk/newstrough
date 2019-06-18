@@ -2,22 +2,19 @@ New York Times,"US, Arthur Gregg Sulzberger",http://rss.nytimes.com/services/xml
 Washington Post,"US, Jeff Bezos",http://feeds.washingtonpost.com/rss/national
 CNN - Cable News Network World,"US, Time Warner",http://rss.cnn.com/rss/cnn_world.rss
 BBC - British Broadcasting Corporation,"UK, state",http://feeds.bbci.co.uk/news/rss.xml
+DW - Deutsche Welle,"German, public",http://rss.dw.com/rdf/rss-en-all
 Reuters World,"UK, The Woodbridge Company Limited (Canadian)",http://feeds.reuters.com/Reuters/worldNews
 FDD's Long War Journal,"US, Foundation for Defense of Democracies",https://feeds.feedburner.com/LongWarJournalSiteWide
 Japan Times,"Japan obviously, Yukiko Ogasawara",https://www.japantimes.co.jp/feed/topstories/
 Nikkei Asian Review,"Japan, Nikkei Inc.",https://asia.nikkei.com/rss/feed/nar
 Mainichi Shimbun,"Japan, Mainichi Newspapers Co., Ltd.",https://mainichi.jp/rss/etc/english_latest.rss
 South China Morning Post,"Hong Kong, Alibaba Group",https://www.scmp.com/rss/91/feed
-Daily Nation,"Kenya, Nation Media Group",https://www.nation.co.ke/1148-2613630-view-asFeed-iahce3/index.xml
-The Daily Star,"Bangladesh, Transcom Group",https://www.thedailystar.net/frontpage/rss.xml
 Haaretz,"Israel, Shocken Family (60%)",http://www.haaretz.com/cmlink/1.4605102
 Aljazeera,"Qatar, Government-owned",http://www.aljazeera.com/xml/rss/all.xml
 Kathimerini,"Greece, Kathimerini Publishing S.A (90%)",http://www.ekathimerini.com/rss
 Sydney Morning Herald,"Australia, Fairfax Media",https://www.smh.com.au/rss/feed.xml
-DW - Deutsche Welle,"German, public",http://rss.dw.com/rdf/rss-en-all
 The Intercept,"US, First Look Media",https://theintercept.com/feed/?rss
 National Public Radio,"US, public",https://www.npr.org/rss/rss.php
-WSJ - Wall Street Journal,"US, News Corp",http://www.wsj.com/xml/rss/3_7085.xml
 PBS - Public Broadcasting Service,"US, public",https://www.pbs.org/newshour/feeds/rss/world
 Defense News,"US, Sightline Media Group",http://feeds.feedburner.com/defense-news/home
 The Chosun Ilbo,"S. Korea, Chosun Ilbo Co.",http://english.chosun.com/site/data/rss/rss.xml
@@ -28,6 +25,5 @@ New Yorker,"US, Conde Nast - Advance Publications",https://www.newyorker.com/fee
 /r/worldnews,"reddit, US, aggregator, Advance Publications",https://reddit.com/r/worldnews.rss
 Hacker News,"US, aggregator, Y Combinator",https://hnrss.org/frontpage
 El País,"Spain, Promotora de Informaciones, S.A (PRISA)",http://ep00.epimg.net/rss/internacional/portada.xml
-La Nacion,"Agentina, Mitre Family",http://contenidos.lanacion.com.ar/herramientas/rss-origen=1
 Le Monde,"France, Groupe Le Monde",https://www.lemonde.fr/rss/une.xml
 Neue Zürcher Zeitung,"Switzerland,NZZ Mediengruppe",https://www.nzz.ch/startseite.rss

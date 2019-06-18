@@ -26,7 +26,6 @@ UTF8 = 'utf-8'
 def make_stub(path):
     return Template(open(path).read())
 
-
 def sh(cmd):
     call(cmd, shell=True)
 
@@ -37,16 +36,24 @@ def gather_items(d):
 
         link = e.link
         headline = cgi.escape(e.title, quote=True)
-        item = itemstub.substitute(
-            link=link, headline=headline)
-        items.append(item)
+
+        try:
+            summary = e.summary
+        except:
+            summary = "no summary"
 
         try:
             pubdate = e.published
         except:
-            pubdate = "no  date supplied"
+            pubdate = "no date supplied"
+        
+        item = itemstub.substitute(
+            link=link, 
+            headline=headline,
+            summary=summary)
+        items.append(item)
 
-        published.append((title + " => " + e.title, pubdate))
+        # published.append((title + " => " + e.title, pubdate))
     return items
 
 
@@ -63,10 +70,12 @@ with io.open(feedpath, 'r', encoding=UTF8) as fl:
         FEEDS.append(row)
 
 sources = []
-published = []
+feeds = []
 for title,desc,url in FEEDS:
     print("retrieving", title.encode(UTF8), " - ", url)
     d = feedparser.parse(url)
+    
+    feeds.append(d)
 
     items = gather_items(d)
 
@@ -76,6 +85,9 @@ for title,desc,url in FEEDS:
     sources.append(source)
     print("done")
 
+# import pickle
+# with open("feeds.pickle", 'wb') as picklefile:
+    # pickle.dump(feeds[0], picklefile)
 
 time = datetime.now(timezone('US/Pacific'))
 format = '%l:%M%p %Z on %b %d, %Y'
