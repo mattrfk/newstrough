@@ -1,23 +1,21 @@
 New York Times,"US, Arthur Gregg Sulzberger",http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
-Washington Post,"US, Jeff Bezos",http://feeds.washingtonpost.com/rss/national
-CNN - Cable News Network World,"US, Time Warner",http://rss.cnn.com/rss/cnn_world.rss
 BBC - British Broadcasting Corporation,"UK, state",http://feeds.bbci.co.uk/news/rss.xml
+National Public Radio,"US, public",https://www.npr.org/rss/rss.php
 DW - Deutsche Welle,"German, public",http://rss.dw.com/rdf/rss-en-all
 Reuters World,"UK, The Woodbridge Company Limited (Canadian)",http://feeds.reuters.com/Reuters/worldNews
+CNN - Cable News Network World,"US, Time Warner",http://rss.cnn.com/rss/cnn_world.rss
 FDD's Long War Journal,"US, Foundation for Defense of Democracies",https://feeds.feedburner.com/LongWarJournalSiteWide
 Japan Times,"Japan obviously, Yukiko Ogasawara",https://www.japantimes.co.jp/feed/topstories/
-Nikkei Asian Review,"Japan, Nikkei Inc.",https://asia.nikkei.com/rss/feed/nar
 Mainichi Shimbun,"Japan, Mainichi Newspapers Co., Ltd.",https://mainichi.jp/rss/etc/english_latest.rss
 South China Morning Post,"Hong Kong, Alibaba Group",https://www.scmp.com/rss/91/feed
 Haaretz,"Israel, Shocken Family (60%)",http://www.haaretz.com/cmlink/1.4605102
 Aljazeera,"Qatar, Government-owned",http://www.aljazeera.com/xml/rss/all.xml
-Kathimerini,"Greece, Kathimerini Publishing S.A (90%)",http://www.ekathimerini.com/rss
 Sydney Morning Herald,"Australia, Fairfax Media",https://www.smh.com.au/rss/feed.xml
 The Intercept,"US, First Look Media",https://theintercept.com/feed/?rss
-National Public Radio,"US, public",https://www.npr.org/rss/rss.php
 PBS - Public Broadcasting Service,"US, public",https://www.pbs.org/newshour/feeds/rss/world
 Defense News,"US, Sightline Media Group",http://feeds.feedburner.com/defense-news/home
 The Chosun Ilbo,"S. Korea, Chosun Ilbo Co.",http://english.chosun.com/site/data/rss/rss.xml
+Washington Post,"US, Jeff Bezos",http://feeds.washingtonpost.com/rss/national
 Fox News,"US,21st Century Fox",http://feeds.foxnews.com/foxnews/latest
 RT - Russia Today,"Russia, state",https://www.rt.com/rss/news/
 Seattle Times,"US, The Seattle Times Co.",https://www.seattletimes.com/feed/

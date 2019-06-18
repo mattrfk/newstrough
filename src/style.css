@@ -33,7 +33,17 @@ li {
 .summary {
   color: #c7c7c7;
   margin-left: 2em;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
+  font-family: initial;
+}
+
+.headline {
+  
+}
+
+#feedstubs {
+  max-width: 800px;
+  margin: auto;
 }
 
 #timestamp {
@@ -45,3 +55,5 @@ li {
   color: #8e8e8e;
   font-size: medium;
 }
+
+
