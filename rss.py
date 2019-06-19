@@ -90,8 +90,8 @@ for title,desc,url in FEEDS:
     print("done")
 
 time = datetime.now(timezone('US/Pacific'))
-format = '%l:%M%p %Z on %b %d, %Y'
-t = "As of: {}".format(time.strftime(format))
+format = '%l:%M%p %Z, %b %d, %Y'
+t = "The trough was last filled at: {}".format(time.strftime(format))
 
 index = indexstub.substitute(timestamp=t, feedstubs=''.join(sources))
 

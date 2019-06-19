@@ -1,27 +1,13 @@
-body {
-  background-color: #262626;
-  color: #D0D0D0;
-}
-
-details {
-  font-family: monospace;
-  font-size: large;
-  color: #ffbf79;
-}
-
 a {
   font-family: serif;
 }
 
-a:link {
-  color: #c7c7c7;
-}
 a:link:hover {
   text-decoration: underline;
 }
 
-a:visited {
-  color: #856f8c;
+ul {
+  padding: 0px;
 }
 
 li {
@@ -31,18 +17,13 @@ li {
 }
 
 .summary {
-  color: #c7c7c7;
-  margin-left: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
   margin-top: 0.3em;
-  font-family: initial;
-}
-
-.headline {
-  
 }
 
 #feedstubs {
-  max-width: 800px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -53,7 +34,4 @@ li {
 #desc {
   margin-left: 0.75em;
   color: #8e8e8e;
-  font-size: medium;
 }
-
-
