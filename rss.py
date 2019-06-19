@@ -91,7 +91,7 @@ for title,desc,url in FEEDS:
 
 time = datetime.now(timezone('US/Pacific'))
 format = '%l:%M%p %Z, %b %d, %Y'
-t = "The trough was last filled at: {}".format(time.strftime(format))
+t = "This trough was filled at: {}".format(time.strftime(format))
 
 index = indexstub.substitute(timestamp=t, feedstubs=''.join(sources))
 

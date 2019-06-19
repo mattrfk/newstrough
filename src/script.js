@@ -39,7 +39,7 @@ function up(){
 		if( curpub > 0 ) {
 			curpub--
 			if (pubs[curpub].open) {
-				open(pubs[curpub])
+				openpub(pubs[curpub])
 				curart = arts.length - 1
 				select(arts[curart])
 			} else {
@@ -67,7 +67,7 @@ function down() {
 		if( curpub < pubs.length - 1 ) {
 			curpub++
 			if (pubs[curpub].open) {
-				open(pubs[curpub]) // this reinits the articles
+				openpub(pubs[curpub]) // this reinits the articles
 				select(arts[curart])
 			} else {
 				select(pubs[curpub])
@@ -100,7 +100,7 @@ function left() {
 	}
 }
 
-function open(pub) {
+function openpub(pub) {
 	pub.open = true
 	arts = pub.getElementsByTagName("li")
 	curart = 0
@@ -109,18 +109,20 @@ function open(pub) {
 function right() {
 	if(curpub >= 0) {
 		current = pubs[curpub]
-		if(current) {
-			// already open, so follow the link that is selected
+		if(current.open) {
+			arts[curart].getElementsByTagName("a")[0].click()
 		}
-
-		open(current)
-		select(arts[curart])
+		else {
+			openpub(current)
+			select(arts[curart])
+		}
 		
 		event.preventDefault()
 	}
 }
 
 function keypress(event) {
+	console.log(event.key)
 	switch(event.key) {
 		case "k":
 		case "ArrowUp":
@@ -134,6 +136,7 @@ function keypress(event) {
 		case "ArrowLeft":
 			left()
 			break
+		case "Enter":
 		case "l":
 		case "ArrowRight":
 			right()
