@@ -122,7 +122,6 @@ function right() {
 }
 
 function keypress(event) {
-	console.log(event.key)
 	switch(event.key) {
 		case "k":
 		case "ArrowUp":
