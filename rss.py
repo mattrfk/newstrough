@@ -18,8 +18,7 @@ TSFORMAT = '%l:%M%p %Z, %b %d, %Y'
 FEEDLIMIT = 15
 FEEDLIST = "sources.csv"
 
-# OUT_DIR = "../www/news/"
-OUT_DIR = "out"
+OUT_DIR = "../www/news/"
 SRC_DIR = "src/"
 INDEX = "index.html"
 
@@ -134,8 +133,7 @@ for title,desc,url in FEEDS:
     sources.append(source)
     print("done")
 
-time = datetime.now(timezone('US/Pacific'))
-timestring = time.strftime(TSFORMAT)
+timestring = datetime.now().strftime(TSFORMAT)
 t = "This trough was filled {}".format(generate_ts_tag(timestring))
 
 index = indexstub.substitute(timestamp=t, feedstubs=''.join(sources))

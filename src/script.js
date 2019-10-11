@@ -53,7 +53,8 @@ function processTimestamps() {
     let s = 
       (days > 0 ? days + " day" + (days > 1 ? "s " : " ") : "") +
       (hours > 0 ? hours + " hour" + (hours > 1 ? "s " : " ") : "") +
-      (minutes > 0 ? minutes + " minute" + (minutes > 1 ? "s " : " ") : "") + 
+      (minutes > 0 || (hours < 1 && days < 1) ? 
+				minutes + " minute" + (minutes === 1 ? " " : "s ") : "") + 
       "ago"
 
     dates[i].textContent = s
