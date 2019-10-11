@@ -22,6 +22,16 @@ li {
   margin-top: 0.3em;
 }
 
+.meta {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.3em;
+}
+
+.timestamp {
+  
+}
+
 #feedstubs {
   max-width: 600px;
   margin: auto;

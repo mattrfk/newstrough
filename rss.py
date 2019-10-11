@@ -1,10 +1,11 @@
 # non-standard
 import feedparser
 from pytz import timezone
+from dateutil import parser
 
 import os
 import csv
-import cgi
+import html
 import io
 import re
 from datetime import datetime
@@ -12,11 +13,13 @@ from subprocess import call
 from string import Template
 
 ENCODING = 'utf-8'
+TSFORMAT = '%l:%M%p %Z, %b %d, %Y'
 
 FEEDLIMIT = 15
 FEEDLIST = "sources.csv"
 
-OUT_DIR = "../www/news/"
+# OUT_DIR = "../www/news/"
+OUT_DIR = "out"
 SRC_DIR = "src/"
 INDEX = "index.html"
 
@@ -33,31 +36,73 @@ def make_stub(path):
 def sh(cmd):
     call(cmd, shell=True)
 
-def gather_items(d):
+def generate_ts_tag(s):
+    d = parser.parse(s)
+    return "<span utcts='{}'class='timestamp'>{}</span>".format(
+        d.timestamp(),
+        d.strftime(TSFORMAT))
+
+# get the published date from the entry
+# return an html tag (string) with the formatted timestamp
+def get_date(entry):
+    s = None
+    if 'published' in entry:
+        s = entry['published'] 
+    elif 'updated' in entry:
+        s = entry['updated']
+
+    if not s: 
+        return ""  
+    else: 
+        return generate_ts_tag(s)
+
+def get_reddit_data(entry):
+    return "submitted by <a href='{}'>{}</a> {}".format(
+        entry['author_detail']['href'],
+        entry['author'],
+        get_date(entry))
+
+def get_hn_data(entry):
+    return "<a href='{}'>comments</a> • submitted by '{}' {}".format(
+        entry['comments'],
+        entry['author'],
+        get_date(entry))
+
+# get info for entry such as published date, article summary
+# return a touple: 
+#   summary - for articles that have one
+#   meta - includes author and date, or other relevant info
+def get_data(feed, entry):
+    summary = ""
+    meta = ""
+    if "reddit.com" in feed.href:
+        meta = get_reddit_data(entry)
+    elif "hnrss" in feed.href:
+        meta = get_hn_data(entry)
+    else:
+        try:
+            summary = re.sub("<.*>", "", entry.summary)
+        except: pass
+
+        meta = "{} {}".format(
+            "by " + entry['author'] + "," if 'author' in entry else "",
+            get_date(entry)
+        )
+    return (summary, meta)
+
+def gather_items(feed):
     items = []
-    for i, e in enumerate(d.entries):
+    for i, entry in enumerate(feed.entries):
         if i > FEEDLIMIT: break
-
-        link = e.link
-        headline = cgi.escape(e.title, quote=True)
-
-        try:
-            summary = re.sub("<.*>", "", e.summary)
-        except:
-            summary = "no summary"
-
-        try:
-            pubdate = e.published
-        except:
-            pubdate = "no date supplied"
-        
+        link = entry.link
+        headline = html.escape(entry.title, quote=True)
+        summary, meta = get_data(feed, entry)
         item = itemstub.substitute(
             link=link, 
             headline=headline,
-            summary=summary)
+            summary=summary,
+            metadata=meta)
         items.append(item)
-
-        # published.append((title + " => " + e.title, pubdate))
     return items
 
 
@@ -90,17 +135,17 @@ for title,desc,url in FEEDS:
     print("done")
 
 time = datetime.now(timezone('US/Pacific'))
-format = '%l:%M%p %Z, %b %d, %Y'
-t = "This trough was filled at: {}".format(time.strftime(format))
+timestring = time.strftime(TSFORMAT)
+t = "This trough was filled {}".format(generate_ts_tag(timestring))
 
 index = indexstub.substitute(timestamp=t, feedstubs=''.join(sources))
 
 # cleanup
 if(os.path.exists(OUT_DIR)):
     sh("rm {}/*".format(OUT_DIR))
-    sh("rmdir {}".format(OUT_DIR))
+else:
+    sh("mkdir -p {}".format(OUT_DIR))
 
-sh("mkdir -p {}".format(OUT_DIR))
 sh("cp {}*.css {}".format(SRC_DIR, OUT_DIR))
 sh("cp {}*.js {}".format(SRC_DIR, OUT_DIR))
 sh("cp {} {}".format(SRCINDEX, OUT_DIR))
