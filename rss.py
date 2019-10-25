@@ -131,7 +131,6 @@ for title,desc,url in FEEDS:
             title=title, desc='['+desc+']', items=''.join(items))
 
     sources.append(source)
-    print("done")
 
 timestring = datetime.now().strftime(TSFORMAT)
 t = "This trough was filled {}".format(generate_ts_tag(timestring))
