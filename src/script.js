@@ -29,8 +29,14 @@ function select(e) {
   selected = e
   addSelectStyle(selected)
 
-  if(!isElementVisible(e)) {
-    e.scrollIntoView()
+  let v = isElementVisible(e)
+  if(!v.visible) {
+    if(v.below) {
+      e.scrollIntoView()
+    }
+    else if(!v.below) {
+      e.scrollIntoView(false)
+    }
   }
 }
 
@@ -42,7 +48,7 @@ function processTimestamps() {
     let pubdate = new Date(dates[i].getAttribute('utcts') * 1000)
     let deltaminutes = (new Date() - pubdate) / 1000 / 60
 
-    let days = Math.floor(deltaminutes / (60 * 24))
+    let days = Math.floor(deltaminutes / 60 / 24)
     deltaminutes -= days * 60 * 24
     
     let hours = Math.floor(deltaminutes / 60)
@@ -54,7 +60,7 @@ function processTimestamps() {
       (days > 0 ? days + " day" + (days > 1 ? "s " : " ") : "") +
       (hours > 0 ? hours + " hour" + (hours > 1 ? "s " : " ") : "") +
       (minutes > 0 || (hours < 1 && days < 1) ? 
-				minutes + " minute" + (minutes === 1 ? " " : "s ") : "") + 
+	minutes + " minute" + (minutes === 1 ? " " : "s ") : "") + 
       "ago"
 
     dates[i].textContent = s
@@ -172,21 +178,16 @@ function keypress(event) {
 
 // https://stackoverflow.com/a/15203639/1487030
 function isElementVisible(el) {
-    var rect    = el.getBoundingClientRect(),
-        vWidth  = window.innerWidth || doc.documentElement.clientWidth,
-        vHeight = window.innerHeight || doc.documentElement.clientHeight,
-        efp     = function (x, y) { return document.elementFromPoint(x, y) };     
+    let rect = el.getBoundingClientRect()
+    let vHeight = window.innerHeight || doc.documentElement.clientHeight
+    let buffer = 10
 
     // Return false if it's not in the viewport
-    if (rect.right < 0 || rect.bottom < 0 
-            || rect.left > vWidth || rect.top > vHeight)
-        return false;
-
-    // Return true if all of its four corners are visible
-    return (
-          el.contains(efp(rect.left,  rect.top))
-      ||  el.contains(efp(rect.right, rect.top))
-      ||  el.contains(efp(rect.right, rect.bottom))
-      ||  el.contains(efp(rect.left,  rect.bottom))
-    );
+    if (rect.bottom < buffer) {
+      return { visible: false, below: true }
+    }
+    else if(rect.top + buffer > vHeight) {
+      return { visible: false, below: false}
+    }
+    return { visible: true }
 }
